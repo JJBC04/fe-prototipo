@@ -1,0 +1,47 @@
+<nav
+    class="relative w-full flex flex-wrap items-center justify-between py-4 bg-gray-100 text-gray-500 hover:text-gray-700 focus:text-gray-700 shadow-lg">
+    <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
+        <div class="container-fluid pr-7">
+            <div class="flex items-center text-gray-900 hover:text-gray-900 focus:text-gray-900 mt-2 lg:mt-0 mr-1">
+                <img class="mr-2" src="https://cdn-icons-png.flaticon.com/512/7531/7531688.png" style="height: 30px"
+                    alt="" loading="lazy" />
+                <span class="font-black">My Pets</span>
+            </div>
+        </div>
+        <div class="ontainer-fluid flex flex-row flex-grow">
+            <ul class="pl-0 list-style-none mr-auto flex flex-row">
+                <li class="nav-item p-2">
+                    <a routerLink="/"
+                        class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">Inicio</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a *ngIf="loginUser()" class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                        href="#">Registrar
+                        mascota</a>
+                    <a *ngIf="!loginUser()" routerLink="/register-user"
+                        class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">Registrar
+                        usuario</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a *ngIf="loginUser()" class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                        href="#">Reporte
+                        mascota</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a *ngIf="loginUser()" class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                        href="#">Editar Perfil</a>
+                </li>
+            </ul>
+        </div>
+        <div class="flex flex-row-reverse p">
+            <div class="flex space-x-2 justify-center">
+                <button *ngIf="!loginUser()" type="button" routerLink="/login"
+                    class="inline-block px-6 py-2.5 bg-orange-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-orange-200 hover:shadow-lg hover:text-gray-600 focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">Iniciar
+                    Sesion</button>
+                <button *ngIf="loginUser()" (click)="cerrarSesion()" type="button"
+                    class="inline-block px-6 py-2.5 bg-orange-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-orange-200 hover:shadow-lg hover:text-gray-600 focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">Cerrar
+                    Sesion</button>
+            </div>
+        </div>
+    </div>
+</nav>

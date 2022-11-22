@@ -1,0 +1,201 @@
+<div class="flex flex-row h-screen justify-center items-center bg-stone-500">
+    <div class="block p-6 rounded-lg shadow-lg bg-white max-w-2xl">
+        <form [formGroup]="addUserForm" (ngSubmit)="addUser()">
+            <div class="form-group mb-6">
+                <input formControlName="fullname" type="text" class="form-control
+            block
+            w-full
+            px-3
+            py-1.5
+            text-base
+            font-normal
+            text-gray-700
+            bg-white bg-clip-padding
+            border border-solid border-gray-300
+            rounded
+            transition
+            ease-in-out
+            m-0
+            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Nombre Completo">
+                <div *ngIf="addUserForm.get('fullname')?.invalid && addUserForm.get('fullname')?.touched"
+                    class="p-2 my-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-full"
+                    role="alert">
+                    <span>El nombre es requerido!</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <!--Para dos-->
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96 flex flex-row">
+                        <p class="mr-1">Genero:</p>
+                        <select formControlName="genre" class="form-select appearance-none
+                        h-3/4
+                        w-full
+                        px-3
+                       
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding bg-no-repeat
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group mb-6">
+                    <input formControlName="age" type="number" class="form-control
+                block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Edad">
+                    <div *ngIf="addUserForm.get('age')?.invalid && addUserForm.get('age')?.touched"
+                        class="p-2 my-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-full"
+                        role="alert">
+                        <span>La edad es requerida!</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group mb-6">
+                <input formControlName="email" type="email" class="form-control block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    placeholder="Correo Electronico">
+                <div *ngIf="addUserForm.get('email')?.invalid && addUserForm.get('email')?.touched"
+                    class="p-2 my-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-full"
+                    role="alert">
+                    <span>El correo es requerido!</span>
+                </div>
+            </div>
+            <div class="form-group mb-6">
+                <input formControlName="mobileNumber" type="number" class="form-control block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    placeholder="Numero celular">
+                <div *ngIf="addUserForm.get('mobileNumber')?.invalid && addUserForm.get('mobileNumber')?.touched"
+                    class="p-2 my-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-full"
+                    role="alert">
+                    <span>El numero de telefono es requerido!</span>
+                </div>
+            </div>
+            <div class="form-group mb-6">
+                <input formControlName="userName" type="text" class="form-control block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    placeholder="Nombre de Usuario">
+                <div *ngIf="addUserForm.get('userName')?.invalid && addUserForm.get('userName')?.touched"
+                    class="p-2 my-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-full"
+                    role="alert">
+                    <span>El nombre de usuario es requerido!</span>
+                </div>
+            </div>
+            <div class="form-group mb-6">
+                <input formControlName="password" type="password" class="form-control block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Contraseña">
+                <div *ngIf="addUserForm.get('password')?.invalid && addUserForm.get('password')?.touched"
+                    class="p-2 my-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-full"
+                    role="alert">
+                    <span>La contraseña es requerido!</span>
+                </div>
+            </div>
+            <button type="submit" class="
+            w-full
+            px-6
+            py-2.5
+            bg-blue-600
+            text-white
+            font-medium
+            text-xs
+            leading-tight
+            uppercase
+            rounded
+            shadow-md
+            hover:bg-blue-700 hover:shadow-lg
+            focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+            active:bg-blue-800 active:shadow-lg
+            transition
+            duration-150
+            ease-in-out">Crear Usuario</button>
+        </form>
+    </div>
+</div>
+
+<div class="w-80 h-fit shadow-xl fixed top-14 right-14 bg-white rounded-xl flex"
+    [@showMsgError]="showMsgErrorV ? 'show' : 'hide'">
+    <div class="h-min-full w-2 bg-red-600 rounded-l-xl"></div>
+    <div class="flex w-full h-fit flex-row p-3 justify-center">
+        <div class="h-min-full flex flex-col justify-center mr-3">
+            <fa-icon class="text-4xl text-red-600"></fa-icon>
+        </div>
+        <div class="">
+            <p class="font-bold">Error al crear usuario</p>
+            <p class="text-sm">Ocurrio un error al crear el usuario, vuelve a ingresar la informacion y vuelva a
+                intentar</p>
+        </div>
+    </div>
+    <div class="absolute pl-2 pr-2 h-1  w-full bottom-0 left-0">
+        <div class="bg-red-600 h-full" [style.width]="progress"></div>
+    </div>
+</div>
