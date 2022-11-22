@@ -32,7 +32,7 @@ import { UserService } from 'src/app/services/user.service';
   ]
 })
 export class RegisterUserFormComponent {
-  addUserForm: FormGroup;
+  addUserForm: FormGroup
   user: User | undefined
 
   constructor(private fb: FormBuilder, private _userService: UserService, private router: Router) {
@@ -64,7 +64,7 @@ export class RegisterUserFormComponent {
         this.user = data
         this.router.navigate(['/login'])
       }, error: _error => {
-        return this.showMsgError();
+        return this.showMsgError()
       }
     })
   }

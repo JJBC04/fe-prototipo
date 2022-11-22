@@ -25,6 +25,7 @@ export class AutentifactionService {
   idUserLogin?: number
   saveSessionUser(id: any) {
     this.idUserLogin = id
+    console.log(this.idUserLogin)
     this.enter = true
     this.sendIdUserLogin()
     return this.idUserLogin //Acceder al id del usuario logeado

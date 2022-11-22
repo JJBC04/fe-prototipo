@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { state, style, transition, trigger, useAnimation } from '@angular/animations';
 import { bounceInRight, bounceOutRight } from 'ng-animate';
 import { AutentifactionService } from 'src/app/services/autentifaction.service';
 import { Router } from '@angular/router';
+import { User } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-login-form',

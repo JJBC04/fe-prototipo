@@ -1,0 +1,231 @@
+<div class=" bg-stone-500 h-screen">
+    <div class="flex flex-row h-auto justify-center items-center bg-stone-500">
+        <div class="mt-10 block p-6 rounded-lg shadow-lg bg-white max-w-2xl">
+            <form [formGroup]="editUserForm" (ngSubmit)="updateUser()">
+                <div class="form-group mb-6">
+                    <p class="mr-1">Nombre completo:</p>
+                    <input formControlName="fullname" type="text" class="form-control
+            block
+            w-full
+            px-3
+            py-1.5
+            text-base
+            font-normal
+            text-gray-700
+            bg-white bg-clip-padding
+            border border-solid border-gray-300
+            rounded
+            transition
+            ease-in-out
+            m-0
+            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Nombre Completo">
+                    <div *ngIf="editUserForm.get('fullname')?.invalid && editUserForm.get('fullname')?.touched"
+                        class="p-2 my-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-full"
+                        role="alert">
+                        <span>El nombre es requerido!</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <!--Para dos-->
+                    <div class="flex justify-center">
+                        <div class="xl:w-96 form-group mb-6">
+                            <p class="mr-1">Genero:</p>
+                            <select formControlName="genre" class="form-select appearance-none
+                        h-auto
+                        w-full
+                        px-3
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding bg-no-repeat
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group mb-6">
+                        <p class="mr-1">Edad:</p>
+                        <input formControlName="age" type="number" class="form-control
+                block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Edad">
+                        <div *ngIf="editUserForm.get('age')?.invalid && editUserForm.get('age')?.touched"
+                            class="p-2 my-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-full"
+                            role="alert">
+                            <span>La edad es requerida!</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group mb-6">
+                    <p class="mr-1">Correo Electronico:</p>
+                    <input formControlName="email" type="email" class="form-control block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        placeholder="Correo Electronico">
+                    <div *ngIf="editUserForm.get('email')?.invalid && editUserForm.get('email')?.touched"
+                        class="p-2 my-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-full"
+                        role="alert">
+                        <span>El correo es requerido!</span>
+                    </div>
+                </div>
+                <div class="form-group mb-6">
+                    <p class="mr-1">Numero de telefono</p>
+                    <input formControlName="mobileNumber" type="number" class="form-control block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        placeholder="Numero celular">
+                    <div *ngIf="editUserForm.get('mobileNumber')?.invalid && editUserForm.get('mobileNumber')?.touched"
+                        class="p-2 my-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-full"
+                        role="alert">
+                        <span>El numero de telefono es requerido!</span>
+                    </div>
+                </div>
+                <div class="form-group mb-6">
+                    <p class="mr-1">Nombre de usuario</p>
+                    <input formControlName="userName" type="text" class="form-control block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        placeholder="Nombre de Usuario">
+                    <div *ngIf="editUserForm.get('userName')?.invalid && editUserForm.get('userName')?.touched"
+                        class="p-2 my-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-full"
+                        role="alert">
+                        <span>El nombre de usuario es requerido!</span>
+                    </div>
+                </div>
+                <div class="form-group mb-6">
+                    <p class="mr-1">Contraseña</p>
+                    <input formControlName="password" type="password" class="form-control block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Contraseña">
+                    <div *ngIf="editUserForm.get('password')?.invalid && editUserForm.get('password')?.touched"
+                        class="p-2 my-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-full"
+                        role="alert">
+                        <span>La contraseña es requerido!</span>
+                    </div>
+                </div>
+                <div class="flex flex-row">
+                    <button type="submit" class="
+                    w-2/3
+                    h-10
+                    mr-8
+                    px-6
+                    py-2.5
+                    bg-blue-600
+                    text-white
+                    font-medium
+                    text-xs
+                    leading-tight
+                    uppercase
+                    rounded
+                    shadow-md
+                    hover:bg-blue-700 hover:shadow-lg
+                    focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+                    active:bg-blue-800 active:shadow-lg
+                    transition
+                    duration-150
+                    ease-in-out">Actualizar Datos</button>
+                    <button type="button" (click)="deleteUser()" class="
+                    w-1/4
+                    h-10
+                    px-6
+                    py-2.5
+                    bg-red-600
+                    text-white
+                    font-medium
+                    text-xs
+                    leading-tight
+                    uppercase
+                    rounded
+                    shadow-md
+                    hover:bg-red-700 hover:shadow-lg
+                    focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0
+                    active:bg-red-800 active:shadow-lg
+                    transition
+                    duration-150
+                    ease-in-out">Eliminar Usuario</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="w-80 h-fit shadow-xl fixed top-14 right-14 bg-white rounded-xl flex"
+    [@showMsgError]="showMsgUpdateV ? 'show' : 'hide'">
+    <div class="h-min-full w-2 bg-green-600 rounded-l-xl"></div>
+    <div class="flex w-full h-fit flex-row p-3 justify-center">
+        <div class="h-min-full flex flex-col justify-center mr-3">
+            <fa-icon class="text-4xl text-green-600"></fa-icon>
+        </div>
+        <div class="">
+            <p class="font-bold">Se actualizaron los datos correctamente</p>
+            <p class="text-sm">Se actualizo los datos del usuario correctamente</p>
+        </div>
+    </div>
+    <div class="absolute pl-2 pr-2 h-1  w-full bottom-0 left-0">
+        <div class="bg-green-600 h-full" [style.width]="progress"></div>
+    </div>
+</div>

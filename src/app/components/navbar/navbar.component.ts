@@ -10,13 +10,16 @@ import { AutentifactionService } from 'src/app/services/autentifaction.service';
 })
 export class NavbarComponent {
   constructor(private loginService: AutentifactionService) { }
-  idUserLogin?: number
+  idUserLogin: number | undefined
 
   public loginUser(): boolean {
     this.idUserLogin = this.loginService.sendIdUserLogin()
     return this.loginService.userValidation()
   }
-
+  /*sendIdUserLogin(): number {
+    console.log(this.idUserLogin)
+    return this.idUserLogin as number
+  }*/
   cerrarSesion() {
     this.loginService.deleteSessionUser()
     this.loginUser()

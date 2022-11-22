@@ -15,4 +15,15 @@ export class UserService {
     return this.http.post(this.myAppUrl + this.myApiUrl, user)
   }
 
+  updateUser(id: number, user: User): Observable<any> {
+    return this.http.put(this.myAppUrl + this.myApiUrl + id, user)
+  }
+
+  getUser(id: number): Observable<any> {
+    return this.http.get(this.myAppUrl + this.myApiUrl + id)
+  }
+
+  deleteUser(id: number): Observable<any> {
+    return this.http.delete(this.myAppUrl + this.myApiUrl + id)
+  }
 }
