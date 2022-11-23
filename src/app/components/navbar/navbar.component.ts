@@ -16,12 +16,10 @@ export class NavbarComponent {
     this.idUserLogin = this.loginService.sendIdUserLogin()
     return this.loginService.userValidation()
   }
-  /*sendIdUserLogin(): number {
-    console.log(this.idUserLogin)
-    return this.idUserLogin as number
-  }*/
+
   cerrarSesion() {
     this.loginService.deleteSessionUser()
+    sessionStorage.removeItem('User')
     this.loginUser()
   }
 }

@@ -8,6 +8,7 @@ import { User } from '../interfaces/user';
 })
 export class AutentifactionService {
 
+  user: User | undefined
   private enter: boolean = false //Variable para mostrar o no los menus al usuario
   constructor(private http: HttpClient) { }
   private myAppUrl = 'https://localhost:7178/'
@@ -23,12 +24,15 @@ export class AutentifactionService {
   }
 
   idUserLogin?: number
-  saveSessionUser(id: any) {
-    this.idUserLogin = id
-    console.log(this.idUserLogin)
+  saveSessionUser(User: User) {
+    this.idUserLogin = User.id as unknown as number
+    this.user = User
     this.enter = true
     this.sendIdUserLogin()
-    return this.idUserLogin //Acceder al id del usuario logeado
+    sessionStorage.setItem('id', User.id as unknown as string)
+    sessionStorage.setItem('User', JSON.stringify(this.user) as unknown as string)
+    console.log(this.user)
+    return this.user //Acceder al id del usuario logeado
   }
 
   sendIdUserLogin() {

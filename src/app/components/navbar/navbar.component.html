@@ -15,16 +15,16 @@
                         class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">Inicio</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a *ngIf="loginUser()" class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-                        href="#">Registrar
+                    <a *ngIf="loginUser()" routerLink="/register-pet"
+                        class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" href="#">Registrar
                         mascota</a>
                     <a *ngIf="!loginUser()" routerLink="/register-user"
                         class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">Registrar
                         usuario</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a *ngIf="loginUser()" class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-                        href="#">Reporte
+                    <a *ngIf="loginUser()" routerLink="/list-pet"
+                        class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" href="#">Reporte
                         mascota</a>
                 </li>
                 <li class="nav-item p-2">

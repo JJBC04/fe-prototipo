@@ -1,0 +1,218 @@
+<div class="flex flex-row h-screen justify-center items-center bg-stone-500">
+    <div class="block p-6 rounded-lg shadow-lg bg-white max-w-2xl">
+        <p class="text-center text-lg w mb-6 text-slate-800">Registrar Mascota</p>
+        <form [formGroup]="addPetForm" (ngSubmit)="addPet()">
+            <div class="grid grid-cols-2 gap-4">
+                <div class="form-group mb-6">
+                    <p class="mr-1">Nombre Mascota:</p>
+                    <input formControlName="name" type="text" class="form-control
+            block
+            w-full
+            px-3
+            py-1.5
+            text-base
+            font-normal
+            text-gray-700
+            bg-white bg-clip-padding
+            border border-solid border-gray-300
+            rounded
+            transition
+            ease-in-out
+            m-0
+            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Nombre Mascota">
+                    <div *ngIf="addPetForm.get('name')?.invalid && addPetForm.get('name')?.touched"
+                        class="p-2 my-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-full"
+                        role="alert">
+                        <span>El nombre de mascota es requerido!</span>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96 flex flex-col">
+                        <p class="mr-1">Genero:</p>
+                        <select formControlName="genre" class="form-select appearance-none
+                        h-auto
+                        w-full
+                        px-3
+                        text-base
+                        font-normal
+                     text-gray-700
+                     bg-white bg-clip-padding bg-no-repeat
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                     ease-in-out
+                     m-0
+                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                            <option value="Masculino">Macho</option>
+                            <option value="Femenino">Hembra</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+                <!--Para tres-->
+                <div class="form-group mb-6">
+                    <p class="mr-1">Edad Mascota</p>
+                    <input formControlName="age" type="number" class="form-control
+                block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Edad">
+                    <div *ngIf="addPetForm.get('age')?.invalid && addPetForm.get('age')?.touched"
+                        class="p-2 my-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-full"
+                        role="alert">
+                        <span>La edad es requerida!</span>
+                    </div>
+                </div>
+                <div class="form-group mb-6">
+                    <p class="mr-1">Color Mascota:</p>
+                    <input formControlName="color" type="text" class="form-control
+                block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        placeholder="Color de mascota">
+                    <div *ngIf="addPetForm.get('color')?.invalid && addPetForm.get('color')?.touched"
+                        class="p-2 my-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-full"
+                        role="alert">
+                        <span>El color es requerido!</span>
+                    </div>
+                </div>
+                <div class="form-group mb-6">
+                    <p class="mr-1">Peso Mascota:</p>
+                    <input formControlName="weight" type="number" class="form-control
+                block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        placeholder="Peso de mascota">
+                    <div *ngIf="addPetForm.get('weight')?.invalid && addPetForm.get('weight')?.touched"
+                        class="p-2 my-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-full"
+                        role="alert">
+                        <span>El peso es requerido!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <!--Para dos-->
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96 flex flex-col">
+                        <p class="mr-1">Tipo de mascota:</p>
+                        <select formControlName="typePet" class="form-select appearance-none
+                        h-auto
+                        w-full
+                        px-3
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding bg-no-repeat
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                            <option value="Perro">Perro</option>
+                            <option value="Gato">Gato</option>
+                            <option value="Ave">Ave</option>
+                            <option value="Hamster">Hámster</option>
+                            <option value="Pez">Pez</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group mb-6">
+                    <p class="mr-1">Numero de vacunas:</p>
+                    <input formControlName="numVacine" type="number" class="form-control
+                block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        placeholder="Numero de vacunas">
+                    <div *ngIf="addPetForm.get('numVacine')?.invalid && addPetForm.get('numVacine')?.touched"
+                        class="p-2 my-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 w-full"
+                        role="alert">
+                        <span>El numero de vacunas es requerido!</span>
+                    </div>
+                </div>
+
+            </div>
+            <button type="submit" class="
+            w-full
+            px-6
+            py-2.5
+            bg-blue-600
+            text-white
+            font-medium
+            text-xs
+            leading-tight
+            uppercase
+            rounded
+            shadow-md
+            hover:bg-blue-700 hover:shadow-lg
+            focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+            active:bg-blue-800 active:shadow-lg
+            transition
+            duration-150
+            ease-in-out">Crear Mascota</button>
+        </form>
+    </div>
+</div>
+
+<div class="w-80 h-fit shadow-xl fixed top-14 right-14 bg-white rounded-xl flex"
+    [@showMsgError]="showMsgErrorV ? 'show' : 'hide'">
+    <div class="h-min-full w-2 bg-red-600 rounded-l-xl"></div>
+    <div class="flex w-full h-fit flex-row p-3 justify-center">
+        <div class="h-min-full flex flex-col justify-center mr-3">
+            <fa-icon class="text-4xl text-red-600"></fa-icon>
+        </div>
+        <div class="">
+            <p class="font-bold">Error al crear la mascota</p>
+            <p class="text-sm">Ocurrio un error al crear la Mascota vuelve a ingresar la informacion y vuelva a
+                intentar</p>
+        </div>
+    </div>
+    <div class="absolute pl-2 pr-2 h-1  w-full bottom-0 left-0">
+        <div class="bg-red-600 h-full" [style.width]="progress"></div>
+    </div>
+</div>

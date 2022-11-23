@@ -1,0 +1,79 @@
+<div class="p-4">
+    <h2 class="text-center text-2xl text-slate-800">Listado de mascotas</h2>
+    <div class="flex flex-col">
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                    <table class="min-w-full text-center">
+                        <thead class="border-b bg-gray-800">
+                            <tr>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Nombre Mascota
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Edad
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Tipo de Mascota
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Color
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Peso
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    # Vacunas
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Acciones
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let pet of listPets" class="bg-white border-b">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{pet.name}}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    {{pet.age}}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    {{pet.typePet}}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    {{pet.color}}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    {{pet.weight}}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    {{pet.numVacine}}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    Botones aqui
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="w-80 h-fit shadow-xl fixed top-14 right-14 bg-white rounded-xl flex"
+    [@showMsgError]="showMsgErrorV ? 'show' : 'hide'">
+    <div class="h-min-full w-2 bg-red-600 rounded-l-xl"></div>
+    <div class="flex w-full h-fit flex-row p-3 justify-center">
+        <div class="h-min-full flex flex-col justify-center mr-3">
+            <fa-icon class="text-4xl text-red-600"></fa-icon>
+        </div>
+        <div class="">
+            <p class="font-bold">No tiene mascotas Registradas</p>
+            <p class="text-sm">Para ver mascotas primero registre por lo menos una</p>
+        </div>
+    </div>
+    <div class="absolute pl-2 pr-2 h-1  w-full bottom-0 left-0">
+        <div class="bg-red-600 h-full" [style.width]="progress"></div>
+    </div>
+</div>

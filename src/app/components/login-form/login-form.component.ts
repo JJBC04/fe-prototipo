@@ -1,4 +1,4 @@
-import { Component, Inject, inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { state, style, transition, trigger, useAnimation } from '@angular/animations';
 import { bounceInRight, bounceOutRight } from 'ng-animate';
@@ -32,12 +32,11 @@ import { User } from 'src/app/interfaces/user';
   ]
 })
 
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent {
 
   constructor(private fb: FormBuilder, private loginService: AutentifactionService, private _router: Router) { } //Traer el servicio de login
 
-  ngOnInit(): void { }
-
+  user: User | undefined
   loginForm = new FormGroup({
     username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required])
@@ -53,7 +52,9 @@ export class LoginFormComponent implements OnInit {
             this.isUserValid = false;
             this.showMsgError()
           } else {
-            this.loginService.saveSessionUser(data)
+            this.user = data as unknown as User
+            console.log(this.user + " User:")
+            this.loginService.saveSessionUser(data as unknown as User)
             this.isUserValid = true
             this._router.navigate([''])
           }

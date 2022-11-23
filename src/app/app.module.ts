@@ -15,6 +15,8 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { RegisterUserFormComponent } from './components/register-user-form/register-user-form.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { RegisterPetComponent } from './components/register-pet/register-pet.component';
+import { ListPetsComponent } from './components/list-pets/list-pets.component';
 
 
 
@@ -25,7 +27,9 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     LoginFormComponent,
     HomePageComponent,
     RegisterUserFormComponent,
-    EditUserComponent
+    EditUserComponent,
+    RegisterPetComponent,
+    ListPetsComponent
   ],
   imports: [
     BrowserModule,

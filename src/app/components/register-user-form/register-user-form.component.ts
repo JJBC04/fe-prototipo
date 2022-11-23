@@ -57,11 +57,10 @@ export class RegisterUserFormComponent {
       userName: this.addUserForm.get('userName')?.value,
       password: this.addUserForm.get('password')?.value,
     }
-    console.log(user)
     this._userService.saveUser(user).subscribe({
       next: data => {
-        console.log(data)
         this.user = data
+        window.alert("Se creo el usuario correctamente!")
         this.router.navigate(['/login'])
       }, error: _error => {
         return this.showMsgError()
